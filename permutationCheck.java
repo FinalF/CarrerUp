@@ -26,6 +26,7 @@ public class permutationCheck {
 				}
 			}
 			//compare it with b
+			/*
 			for(int i = 0; i < b.length(); i++){
 				if(charMap.containsKey(b.charAt(i))){
 					int count = charMap.get(b.charAt(i));
@@ -36,7 +37,22 @@ public class permutationCheck {
 					break;
 				}
 			}
+			*/
+			//More efficient way: 
+			for (int i = 0; i < stringLength; i++) {
+			    char temp = str2.charAt(i);
+			    if (stringHashMap.containsKey(temp)) {
+			        int count = stringHashMap.get(temp);
+			        if (count == 0) {
+			            return false;
+			        }
+			        stringHashMap.put(temp, --count);
+			    } else {
+			        return false;
+			    }
+			}
 			//make the decision
+			/* This part is unecessary
 			if(isPer==true){
 				for(int count:charMap.values()){
 					if(count!=0){
@@ -45,6 +61,7 @@ public class permutationCheck {
 					}
 				}
 			}
+			*/
 		}
 		return isPer;
 	}

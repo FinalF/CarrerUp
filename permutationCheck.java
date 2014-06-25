@@ -38,7 +38,7 @@ public class permutationCheck {
 				}
 			}
 			*/
-			//More efficient way: 
+			//More efficient way
 			for (int i = 0; i < stringLength; i++) {
 			    char temp = str2.charAt(i);
 			    if (stringHashMap.containsKey(temp)) {
